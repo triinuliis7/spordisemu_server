@@ -6,17 +6,13 @@
         SELECT * from users;
 EOF;
 
-    $ret = pg_query($db, $sql);
-    if(!$ret){
+    $result = pg_query($db, $sql);
+    if(!$result){
       echo pg_last_error($db);
       exit;
     } 
-    $myarray = array()
-    while ($row = pg_fetch_row($ret)) {
-      $myarray[] = $row;
-    }
-
-    echo json_encode($myarray);
+    $resultArray = pg_fetch_all($result);
+	echo json_encode($resultArray);
     pg_close($db);
 
 	
