@@ -1,5 +1,17 @@
 <?php
 
+	add_action('init', function() {
+	  $url_path = trim(parse_url(add_query_arg(array()), PHP_URL_PATH), '/');
+	  echo $url_path;
+	  if ( $url_path === 'retail' ) {
+		 // load the file if exists
+		 $load = locate_template('template-retail.php', true);
+		 if ($load) {
+			exit(); // just exit if template was found and loaded
+		 }
+	  }
+	});
+
    $host        = "host=ec2-54-163-228-109.compute-1.amazonaws.com";
    $port        = "port=5432";
    $dbname      = "dbname=d1h5f179s0jvci";
@@ -11,6 +23,23 @@
    } else {
       echo "Opened database successfully\n";
    }
+   
+   $sql =<<<EOF
+      SELECT * from users;
+EOF;
+
+   $ret = pg_query($db, $sql);
+   if(!$ret){
+      echo pg_last_error($db);
+      exit;
+   } 
+   while($row = pg_fetch_row($ret)){
+      echo "user_id = ". $row[0] . "\n";
+      echo "username = ". $row[1] ."\n";
+      echo "password = ". $row[2] ."\n";
+   }
+   echo "Operation done successfully\n";
+   pg_close($db);
 
 /**
  * Laravel - A PHP Framework For Web Artisans
