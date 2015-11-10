@@ -1,8 +1,6 @@
 <?php
 
-	$url_path = trim(parse_url(add_query_arg(array()), PHP_URL_PATH), '/');
-	echo $url_path;
-
+	
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	echo "Actual";
 	echo $actual_link;
