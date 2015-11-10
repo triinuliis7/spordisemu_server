@@ -1,17 +1,13 @@
 <?php
 
-	add_action('init', function() {
-	  $url_path = trim(parse_url(add_query_arg(array()), PHP_URL_PATH), '/');
-	  echo $url_path;
-	  if ( $url_path === 'retail' ) {
-		 // load the file if exists
-		 $load = locate_template('template-retail.php', true);
-		 if ($load) {
-			exit(); // just exit if template was found and loaded
-		 }
-	  }
-	});
+	$url_path = trim(parse_url(add_query_arg(array()), PHP_URL_PATH), '/');
+	echo $url_path;
 
+	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	echo "Actual";
+	echo $actual_link;
+	
+	
    $host        = "host=ec2-54-163-228-109.compute-1.amazonaws.com";
    $port        = "port=5432";
    $dbname      = "dbname=d1h5f179s0jvci";
