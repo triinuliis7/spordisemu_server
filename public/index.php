@@ -4,6 +4,10 @@
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	echo "Actual";
 	echo $actual_link;
+	echo "Host";
+	echo $_SERVER[HTTP_HOST];
+	echo "Request";
+	echo $_SERVER[REQUEST_URI];
 	
 	
    $host        = "host=ec2-54-163-228-109.compute-1.amazonaws.com";
@@ -54,7 +58,7 @@ EOF;
 |
 */
 
-require __DIR__.'/../bootstrap/autoload.php';
+/*require __DIR__.'/../bootstrap/autoload.php';*/
 
 /*
 |--------------------------------------------------------------------------
