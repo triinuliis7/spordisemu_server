@@ -1,9 +1,5 @@
 <?php
 
-
-	echo "Request";
-	echo $_SERVER[REQUEST_URI];
-
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
