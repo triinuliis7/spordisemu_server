@@ -4,13 +4,13 @@
 	
 	include 'database.php';
 	
-	if ( $url === '/users' ) {
-		// load the file if exists
-		$load = locate_template('users.php', true);
-		if ($load) {
-			exit(); // just exit if template was found and loaded
-		}
-	}
+   if ( $url === '/users' ) {
+     // load the file if exists
+     $load = locate_template('users.php', true);
+     if ($load) {
+        exit(); // just exit if template was found and loaded
+     }
+  }
 
 /**
  * Laravel - A PHP Framework For Web Artisans
