@@ -1,10 +1,9 @@
 <?php
 
 	include 'database.php';
-	
+	echo $username
 	if(isset($username))
-	{
-		
+	{		
 		echo $username;
 		$sql = "SELECT * from users where username=$username";
 	}
