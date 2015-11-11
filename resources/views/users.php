@@ -7,7 +7,8 @@
 		echo $username;
 		$sql = "SELECT * from users where username=$username";
 	}
-	else {    
+	else {
+		echo "hei";
 		$sql = "SELECT * from users";
 	}
 
