@@ -5,6 +5,7 @@
 	if(isset($_GET['username']))
 	{
 		$sql = "SELECT * from users where username=$username";
+		echo $username;
 	}
 	else {    
 		$sql = "SELECT * from users";
