@@ -1,7 +1,7 @@
 <?php
 
 	include 'database.php';
-	echo $username
+	
 	if(isset($username))
 	{		
 		echo $username;
