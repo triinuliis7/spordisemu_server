@@ -2,7 +2,7 @@
 
 	include 'database.php';
 	
-	if(isset($_GET['username']))
+	if(isset($username))
 	{
 		$sql = "SELECT * from users where username=$username";
 		echo $username;
