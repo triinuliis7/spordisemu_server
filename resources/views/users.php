@@ -1,10 +1,14 @@
 <?php
 
 	include 'database.php';
-    
-    $sql =<<<EOF
-        SELECT * from users;
-EOF;
+	
+	if(isset($_GET['username']))
+	{
+		$sql = "SELECT * from users where username=$username";
+	}
+	else {    
+		$sql = "SELECT * from users";
+	}
 
     $result = pg_query($db, $sql);
     if(!$result){
