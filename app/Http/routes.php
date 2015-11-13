@@ -20,7 +20,7 @@ Route::get('/users', function () {
 });
 
 Route::put('/users', function () {
-	print_r(Request::get('firstname'));die;
+	echo Input::get('firstname');
 });
 
 Route::get('/users/{username}', function ($username) {	
