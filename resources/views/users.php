@@ -11,7 +11,7 @@
             $sql = "SELECT * from users";
             $json = file_get_contents('php://input');
             $obj = json_decode($json);
-            echo $obj["firstname"];
+            echo $obj;
             //echo json_decode(stream_get_contents(STDIN));
         } else {
             $sql = "SELECT * from users";
