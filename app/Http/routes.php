@@ -19,7 +19,7 @@ Route::get('/users', function () {
 	return view('users');
 });
 
-Route::post('/users', function () {
+Route::post('users', function () {
 	echo "POST";
 });
 
