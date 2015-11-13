@@ -7,7 +7,12 @@
         $sql = "SELECT * FROM users where username='$username'";
     }
     else {
-        $sql = "SELECT * from users";  
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            echo $data;
+        } else {
+            $sql = "SELECT * from users";    
+        }        
+ 
     }
 
     $result = pg_query($db, $sql);
