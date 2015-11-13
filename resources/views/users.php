@@ -3,9 +3,8 @@
 	include 'database.php';
 	
 	if(isset($username))
-    {        
-        echo $username;
-        $sql = "SELECT * FROM users";
+    {
+        $sql = "SELECT * FROM users where username=", $username;
     }
     else {
         $sql = "SELECT * from users";
