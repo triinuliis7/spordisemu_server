@@ -8,7 +8,7 @@
     }
     else {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            echo json_decode(stream_get_contents(STDIN));
+            echo "POST";
         } else {
             $sql = "SELECT * from users";
         }
