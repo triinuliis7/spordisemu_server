@@ -2,7 +2,14 @@
 
 	include 'database.php';
 	
-	$sql = "SELECT * from users";
+	if(isset($username))
+    {        
+        echo $username;
+        $sql = "SELECT * FROM users";
+    }
+    else {
+        $sql = "SELECT * from users";
+    }
 
     $result = pg_query($db, $sql);
     if(!$result){
