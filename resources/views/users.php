@@ -7,7 +7,7 @@
         $sql = "SELECT * FROM users where username='$username'";
     }
     else {
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if($_SERVER["REQUEST_METHOD"] == "PUT") {
             $data = array();
             $data = json_decode(file_get_contents("php://input"), true);
             echo $data;
