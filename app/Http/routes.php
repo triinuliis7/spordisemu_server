@@ -19,6 +19,10 @@ Route::get('/users', function () {
 	return view('users');
 });
 
+Route::post('/users', function () {
+	echo Input::all();
+});
+
 Route::get('/users/{username}', function ($username) {	
 	return view('users')->with('username', $username);
 });
