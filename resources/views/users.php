@@ -4,7 +4,7 @@
 	
 	if(isset($username))
     {
-        $sql = "SELECT * FROM users where username=", $username;
+        $sql = "SELECT * FROM users where username='$username'";
     }
     else {
         $sql = "SELECT * from users";
