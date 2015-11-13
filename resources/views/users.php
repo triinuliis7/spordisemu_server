@@ -7,7 +7,7 @@
         $sql = "SELECT * FROM users where username='$username'";
     }
     else {
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if($_SERVER["REQUEST_METHOD"] === 'POST') {
             echo "POST";
         } else {
             $sql = "SELECT * from users";    
