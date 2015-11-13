@@ -7,11 +7,7 @@
         $sql = "SELECT * FROM users where username='$username'";
     }
     else {
-        if($_SERVER["REQUEST_METHOD"] == "PUT") {
-            echo "PUT";
-        } else {
-            $sql = "SELECT * from users";    
-        }        
+        $sql = "SELECT * from users";     
     }
 
     $result = pg_query($db, $sql);
