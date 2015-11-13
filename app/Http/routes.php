@@ -20,5 +20,5 @@ Route::get('/users', function () {
 });
 
 Route::get('/users/{username}', function () {	
-	return View::make('users');
+	return view('users');
 });
