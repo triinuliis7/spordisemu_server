@@ -10,7 +10,7 @@
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             $postInput = file_get_contents('php://input');
             $data = json_decode($postInput, true);
-            echo $data;
+            echo Response::json($data);
         } else {
             $sql = "SELECT * from users";    
         }        
