@@ -8,9 +8,7 @@
     }
     else {
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $data = array();
-            $data = json_decode(file_get_contents("php://input"), true);
-            echo $data;
+            echo "POST";
         } else {
             $sql = "SELECT * from users";    
         }        
