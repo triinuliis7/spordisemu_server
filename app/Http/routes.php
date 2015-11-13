@@ -20,7 +20,10 @@ Route::get('/users', function () {
 });
 
 Route::put('/users', function () {
-	echo Input::all();
+	if(Request::ajax()) {
+      $data = Input::all();
+      print_r($data);die;
+    }
 });
 
 Route::get('/users/{username}', function ($username) {	
