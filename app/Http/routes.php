@@ -20,7 +20,7 @@ Route::get('/users', function () {
 });
 
 Route::put('/users', function () {
-	return view('users');
+	echo "PUT";
 });
 
 Route::get('/users/{username}', function ($username) {	
