@@ -21,7 +21,8 @@ Route::get('/users', function () {
 
 Route::post('/users', function () {
 	$data = Input::all();
-	return view('users', $data);
+	echo $data;
+	//return view('users', $data);
 });
 
 Route::get('/users/{username}', function ($username) {	
