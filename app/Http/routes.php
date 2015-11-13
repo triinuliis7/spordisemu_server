@@ -19,6 +19,6 @@ Route::get('/users', function () {
 	return view('users');
 });
 
-Route::get('/users/{username}', function () {	
-	return view('users');
+Route::get('/users/{username}', function ($username) {	
+	return view('users')->with('username', $username);
 });
