@@ -19,8 +19,8 @@ Route::get('/users', function () {
 	return view('users');
 });
 
-Route::put('/users', function () {
-	echo "PUT";
+Route::post('/users', function () {
+	echo "POST";
 });
 
 Route::get('/users/{username}', function ($username) {	
