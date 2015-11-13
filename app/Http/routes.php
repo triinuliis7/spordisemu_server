@@ -22,6 +22,7 @@ Route::get('/users', function () {
 Route::post('/users', function () {
 	 if(Request::ajax()) {
       $data = Input::all();
+      echo $data;
       print_r($data);die;
     }
 });
