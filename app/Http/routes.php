@@ -19,7 +19,7 @@ Route::get('/users', function () {
 	return view('users');
 });
 
-Route::post('/users', function () {
+Route::put('/users', function () {
 	echo Input::all();
 });
 
