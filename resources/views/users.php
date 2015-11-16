@@ -10,12 +10,14 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $json = file_get_contents('php://input');
             $json = json_decode($json, true);
-            print_r($json);
-            $user = $json['firstname'];
-            echo $user;
-            //$user = $json['firstname'];
-            //echo $user;
-            $sql = "SELECT * from users where username='$user'";
+            $firstname = $json['firstname'];
+            $lastname = $json['lastname'];
+            $username = $json['username'];
+            $gender = $json['gender'];
+            $email = $json['email'];
+            $password = $json['password'];
+            $sql = "INSERT INTO users (firstname, lastname, username, gender, email, password) 
+                    VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password')";
         } else {
             $sql = "SELECT * from users";
         }
