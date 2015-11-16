@@ -12,6 +12,7 @@
             $obj = json_decode($json);
             print_r($obj);
             echo "POST";
+            $obj = json_decode(json_encode($obj), true);
             $user = $obj["firstname"];
             $sql = "SELECT * from users where username='kalle123'";
             //echo json_decode(stream_get_contents(STDIN));
