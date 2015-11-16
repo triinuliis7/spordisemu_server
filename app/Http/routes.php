@@ -32,5 +32,5 @@ Route::get('/users/{username}', function ($username) {
 /* -- PRACTICES -- */
 
 Route::get('/profiles/{username}', function($username)) {
-	return view('practice')->with('username', $username);
+	return view('profile')->with('username', $username);
 });

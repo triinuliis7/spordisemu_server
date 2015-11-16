@@ -4,9 +4,9 @@
 	
 	if(isset($username))
     {
-        $sql = "SELECT * FROM practices where username='$username'";
+        $sql = "SELECT * FROM profiles where username='$username'";
     }
-    
+
     $result = pg_query($db, $sql);
     if(!$result){
       echo pg_last_error($db);
