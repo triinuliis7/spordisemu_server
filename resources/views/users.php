@@ -17,7 +17,8 @@
             $email = $json['email'];
             $password = $json['password'];
             $sql = "INSERT INTO users (firstname, lastname, username, gender, email, password) 
-                    VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password')";
+                    VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password') 
+                    RETURNING (SELECT * FROM users where username='$username')";
         } else {
             $sql = "SELECT * from users";
         }
