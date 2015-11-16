@@ -10,6 +10,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $json = file_get_contents('php://input');
             $obj = json_decode($json);
+            print_r($obj);
             echo "POST";
             $user = $obj["firstname"];
             $sql = "SELECT * from users where username='kalle123'";
