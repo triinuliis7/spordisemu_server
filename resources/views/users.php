@@ -5,8 +5,7 @@
 	if(isset($username))
     {
         $sql = "SELECT * FROM users where username='$username'";
-    }
-    else {
+    } else {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $json = file_get_contents('php://input');
             $json = json_decode($json, true);

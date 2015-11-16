@@ -29,8 +29,12 @@ Route::get('/users/{username}', function ($username) {
 	return view('users')->with('username', $username);
 });
 
-/* -- PRACTICES -- */
+/* -- PROFILES -- */
 
-Route::get('/profiles/{username}', function($username) {
-	return view('profiles')->with('username', $username);
+Route::get('/profiles/{user_id}', function($user_id) {
+	return view('profiles')->with('user_id', $user_id);
 });
+
+Route::post('/profiles', function() {
+	return view('profiles');
+})
