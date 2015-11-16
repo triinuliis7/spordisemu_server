@@ -11,6 +11,8 @@
 |
 */
 
+/* -- USERS -- */
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,4 +27,10 @@ Route::post('/users', function () {
 
 Route::get('/users/{username}', function ($username) {	
 	return view('users')->with('username', $username);
+});
+
+/* -- PRACTICES -- */
+
+Route::get('/profiles/{username}', function($username)) {
+	return view('practice')->with('username', $username);
 });
