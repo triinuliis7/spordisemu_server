@@ -11,7 +11,8 @@
             $json = file_get_contents('php://input');
             $json = json_decode($json, true);
             print_r($json);
-            echo $json['firstname'];
+            $user = $json['firstname'];
+            echo $user;
             //$user = $json['firstname'];
             //echo $user;
             $sql = "SELECT * from users where username='kalle123'";
