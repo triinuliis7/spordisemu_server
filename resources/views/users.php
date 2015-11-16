@@ -10,7 +10,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $json = file_get_contents('php://input');
             print_r($json);
-            $user = $json['firstname'];
+            //$user = $json['firstname'];
             //echo $user;
             $sql = "SELECT * from users where username='kalle123'";
         } else {
