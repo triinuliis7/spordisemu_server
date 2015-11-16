@@ -15,7 +15,7 @@
             echo $user;
             //$user = $json['firstname'];
             //echo $user;
-            $sql = "SELECT * from users where username='kalle123'";
+            $sql = "SELECT * from users where username='$user'";
         } else {
             $sql = "SELECT * from users";
         }
