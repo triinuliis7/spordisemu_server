@@ -37,4 +37,4 @@ Route::get('/profiles/{user_id}', function($user_id) {
 
 Route::post('/profiles', function() {
 	return view('profiles');
-})
+});
