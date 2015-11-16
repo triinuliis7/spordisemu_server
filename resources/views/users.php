@@ -18,7 +18,7 @@
             $password = $json['password'];
             $sql = "INSERT INTO users (firstname, lastname, username, gender, email, password) 
                     VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password') 
-                    RETURNING id";
+                    RETURNING id, firstname, lastname, username, gender, email, password";
         } else {
             $sql = "SELECT * from users";
         }
