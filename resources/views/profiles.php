@@ -12,7 +12,9 @@
         $location = $json['location'];
         $pic = $json['pic'];
         $sql = "INSERT INTO profiles (user_id, location, pic) 
-                VALUES ('$user_id', '$location', '$pic')";
+                VALUES ('$user_id', '$location', '$pic'); 
+                INSERT INTO sports (user_id, sports, level) 
+                VALUES ('$user_id', '$sports', '$level')";
     } else {
         $sql = "SELECT * FROM profiles where user_id='$user_id'";
     }
