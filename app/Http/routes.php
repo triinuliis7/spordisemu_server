@@ -41,8 +41,8 @@ Route::post('/profiles', function() {
 
 /* -- SPORTS -- */
 
-Route::get('/sports', function() {
-	return view('sports');
+Route::get('/sports/{user_id}', function($user_id) {
+	return view('sports')->with('user_id', $user_id);
 });
 
 Route::post('/sports', function() {
