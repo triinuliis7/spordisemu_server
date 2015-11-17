@@ -92,3 +92,13 @@ Route::get('/attends/{practice_id}', function($practice_id) {
 Route::post('/attends', function() {
 	return view('attends');
 });
+
+/* -- ADDITIONAL -- */
+
+Route::get('/additional/{practice_id}', function($practice_id) {
+	return view('additional')->with('practice_id', $practice_id);
+});
+
+Route::post('/additional', function() {
+	return view('additional');
+});
