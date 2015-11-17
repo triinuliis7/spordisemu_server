@@ -2,9 +2,11 @@
 
 	include 'database.php';
 	
-	if(isset($username))
+	if (isset($username))
     {
         $sql = "SELECT * FROM users where username='$username'";
+    } else if (isset($user_id)) {
+        $sql = "SELECT * FROM users where id='$user_id'";
     } else {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $json = file_get_contents('php://input');

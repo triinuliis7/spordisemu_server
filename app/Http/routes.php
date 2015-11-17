@@ -21,6 +21,10 @@ Route::get('/users', function () {
 	return view('users');
 });
 
+Route::get('/users/id/{user_id}', function ($user_id) {
+	return view('users')->with('user_id', $user_id);
+});
+
 Route::post('/users', function () {
 	return view('users');
 });
