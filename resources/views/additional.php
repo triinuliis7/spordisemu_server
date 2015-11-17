@@ -14,7 +14,7 @@
                 VALUES ('$practice_id', '$min', '$max', '$gender')
                 RETURNING practice_id, min, max, gender";
     } else {
-        $sql = "SELECT * FROM attends where practice_id='$practice_id'";
+        $sql = "SELECT * FROM additional where practice_id='$practice_id'";
     }
 
     $result = pg_query($db, $sql);
