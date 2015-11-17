@@ -58,3 +58,17 @@ Route::get('/ratings/{user_id}', function($user_id) {
 Route::post('/ratings', function() {
 	return view('ratings');
 });
+
+/* -- PRACTICES -- */
+
+Route::get('/practices', function () {
+	return view('practices');
+});
+
+Route::post('/practices', function () {
+	return view('practices');
+});
+
+Route::get('/practices/{practice_id}', function ($practice_id) {	
+	return view('practices')->with('practice_id', $practice_id);
+});
