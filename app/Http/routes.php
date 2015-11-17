@@ -48,3 +48,13 @@ Route::get('/sports/{user_id}', function($user_id) {
 Route::post('/sports', function() {
 	return view('sports');
 });
+
+/* -- RATINGS -- */
+
+Route::get('/ratings/{user_id}', function($user_id) {
+	return view('ratings')->with('user_id', $user_id);
+});
+
+Route::post('/ratings', function() {
+	return view('ratings');
+});
