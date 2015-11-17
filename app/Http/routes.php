@@ -38,3 +38,13 @@ Route::get('/profiles/{user_id}', function($user_id) {
 Route::post('/profiles', function() {
 	return view('profiles');
 });
+
+/* -- SPORTS -- */
+
+Route::get('/sports', function() {
+	return view('sports');
+});
+
+Route::post('/sports', function() {
+	return view('sports');
+});

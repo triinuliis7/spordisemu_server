@@ -31,8 +31,3 @@
     $resultArray = pg_fetch_all($result);
 	echo json_encode($resultArray);
     pg_close($db);
-
-	
-
-   
-   
