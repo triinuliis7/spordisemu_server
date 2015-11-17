@@ -72,3 +72,13 @@ Route::post('/practices', function () {
 Route::get('/practices/{practice_id}', function ($practice_id) {	
 	return view('practices')->with('practice_id', $practice_id);
 });
+
+/* -- COMMENTS -- */
+
+Route::get('/comments/{practice_id}', function($practice_id) {
+	return view('comments')->with('practice_id', $practice_id);
+});
+
+Route::post('/comments', function() {
+	return view('comments');
+});
