@@ -13,7 +13,7 @@
                 VALUES ('$user_id', '$practice_id', '$comment')
                 RETURNING comment_id, user_id, practice_id, comment";
     } else {
-        $sql = "SELECT * FROM comments where practice_id='$practice_id'";
+        $sql = "SELECT * FROM comments inner join users on comments.user_id = users.id where practice_id='$practice_id'";
     }
 
     $result = pg_query($db, $sql);
