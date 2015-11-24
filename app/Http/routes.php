@@ -93,8 +93,8 @@ Route::get('/attends/{practice_id}', function($practice_id) {
 	return view('attends')->with('practice_id', $practice_id);
 });
 
-Route::delete('/attends/{practice_id}/{attend_id}', function($practice_id, $attend_id) {
-	return view('attends')->with('practice_id', $practice_id)->with('attend_id', $attend_id);
+Route::delete('/attends/{practice_id}/{attend_id}', function($attend_id) {
+	return view('attends')->with('attend_id', $attend_id);
 });
 
 Route::post('/attends', function() {
