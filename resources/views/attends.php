@@ -12,7 +12,6 @@
                 VALUES ('$user_id', '$practice_id')
                 RETURNING attend_id, user_id, practice_id";
     } else if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
-        $attend_id = $data[0];
         $sql = "DELETE FROM attends where attend_id='$attend_id"
     } else {
         $sql = "SELECT * FROM attends where practice_id='$practice_id'";
