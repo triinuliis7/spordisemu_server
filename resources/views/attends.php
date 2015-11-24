@@ -4,17 +4,16 @@
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        if (isset($attend_id)) {
-            $sql = "DELETE FROM attends where attend_id='$attend_id";
-        } else {
-            $json = file_get_contents('php://input');
-            $json = json_decode($json, true);
-            $user_id = $json['user_id'];
-            $practice_id = $json['practice_id'];
-            $sql = "INSERT INTO attends (user_id, practice_id) 
-                    VALUES ('$user_id', '$practice_id')
-                    RETURNING attend_id, user_id, practice_id";
-        }
+        $json = file_get_contents('php://input');
+        $json = json_decode($json, true);
+        $user_id = $json['user_id'];
+        $practice_id = $json['practice_id'];
+        $sql = "INSERT INTO attends (user_id, practice_id) 
+                VALUES ('$user_id', '$practice_id')
+                RETURNING attend_id, user_id, practice_id";
+    } else if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
+        $attend_id = $data[0];
+        $sql = "DELETE FROM attends where attend_id='$attend_id"
     } else {
         $sql = "SELECT * FROM attends where practice_id='$practice_id'";
     }
