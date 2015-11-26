@@ -1,6 +1,6 @@
 <?php
 
-use jyggen\Curl\Curl;
+use jyggen\Curl\Request;
 $url = "http://api.parse.com/1/push"; //the gateway to which you want to post the json payload
 
 $data = '{"where":"{}",
@@ -9,7 +9,6 @@ $data = '{"where":"{}",
 $request = new Request($url); // jyggen\Curl\Request
 
 $request->setOption(CURLOPT_FOLLOWLOCATION, true);
-$request->setOption(CURLOPT_RETURNTRANSFER, true);
 
 $request->setOption(CURLOPT_POST, true);
 $request->setOption(CURLOPT_POSTFIELDS, $data);
