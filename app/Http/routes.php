@@ -110,3 +110,9 @@ Route::get('/additional/{practice_id}', function($practice_id) {
 Route::post('/additional', function() {
 	return view('additional');
 });
+
+/* -- NOTIFICATIONS -- */
+
+Route::get('notifications', function() {
+	return view('notifications');
+});
