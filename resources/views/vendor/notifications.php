@@ -1,7 +1,7 @@
 <?php
 
 use jyggen\Curl;
-$url = "http://some.url/"; //the gateway to which you want to post the json payload
+$url = "http://api.parse.com/1/push"; //the gateway to which you want to post the json payload
 
 $data = '{"where":"{}",
     "data": { "alert": "greetings programs" } }'; //or wherever else you get your json from
