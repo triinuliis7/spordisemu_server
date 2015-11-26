@@ -1,23 +1,29 @@
 <?php
 
-$vars = '{"where":"{}",
-    "data": { "alert": "greetings programs" } }';
+use jyggen\Curl;
+$url = "http://some.url/"; //the gateway to which you want to post the json payload
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,"http://api.parse.com/1/push");
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS,$vars);  //Post Fields
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$data = '{"where":"{}",
+    "data": { "alert": "greetings programs" } }'; //or wherever else you get your json from
 
-$headers = array();
-$headers[] = 'X-Parse-Application-Id: FWLLWZk8Adonl3ixkHu71nPUDaM1R2uFcmZJKQA5';
-$headers[] = 'X-Parse-REST-API-Key: hbWpEyWaIIMnmDfFW2wOBGAuEWWm9Af6iUlEIn60';
-$headers[] = 'Content-Type: application/json';
+$request = new Request($url); // jyggen\Curl\Request
 
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$request->setOption(CURLOPT_FOLLOWLOCATION, true);
+$request->setOption(CURLOPT_RETURNTRANSFER, true);
 
-$server_output = curl_exec ($ch);
+$request->setOption(CURLOPT_POST, true);
+$request->setOption(CURLOPT_POSTFIELDS, $data);
 
-curl_close ($ch);
+$request->setOption(CURLOPT_HTTPHEADER, array(                                                                          
+'Content-Type: application/json',
+'X-Parse-Application-Id: FWLLWZk8Adonl3ixkHu71nPUDaM1R2uFcmZJKQA5',
+'X-Parse-REST-API-Key: hbWpEyWaIIMnmDfFW2wOBGAuEWWm9Af6iUlEIn60',
+);
 
-print  $server_output ;
+$request->execute();
+
+if ($request->isSuccessful()) {
+    return $request->getRawResponse();
+} else {
+    throw new Exception($resquest->getErrorMessage());
+}
