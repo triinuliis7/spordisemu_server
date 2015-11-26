@@ -113,10 +113,6 @@ Route::post('/additional', function() {
 
 /* -- NOTIFICATIONS -- */
 
-Route::get('/notifications', function() {
-	return view('notifications');
-});
-
 Route::post('/notifications', function() {
 	return view('notifications');
 });
