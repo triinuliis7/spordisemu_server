@@ -1,6 +1,6 @@
 <?php
 
-use jyggen\Curl;
+use jyggen\Curl\Curl;
 $url = "http://api.parse.com/1/push"; //the gateway to which you want to post the json payload
 
 $data = '{"where":"{}",
