@@ -4,13 +4,8 @@ $APPLICATION_ID = "FWLLWZk8Adonl3ixkHu71nPUDaM1R2uFcmZJKQA5";
 $REST_API_KEY = "hbWpEyWaIIMnmDfFW2wOBGAuEWWm9Af6iUlEIn60";
 $MESSAGE = "your-alert-message";
 $url = 'https://api.parse.com/1/push';
-$data = array(
-    'where' => '{}',
-    'data' => array(
-        'alert' => 'greetings programs',
-    ),
-);
-$_data = json_encode($data);
+$_data = '{"where":"{}",
+    "data": { "alert": "greetings programs" } }';
 $headers = array(
     'X-Parse-Application-Id: FWLLWZk8Adonl3ixkHu71nPUDaM1R2uFcmZJKQA5',
     'X-Parse-REST-API-Key: hbWpEyWaIIMnmDfFW2wOBGAuEWWm9Af6iUlEIn60',
