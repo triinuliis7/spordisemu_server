@@ -12,16 +12,6 @@
                 VALUES ('$user_id', '$practice_id')
                 RETURNING attend_id, user_id, practice_id";
 
-        $queryAndroid = ParseInstallation::query();
-        $queryAndroid->equalTo('deviceType', 'android');
-
-        ParsePush::send(array(
-            "where" => $queryAndroid,
-            "data" => array(
-              "alert" => "Uus attend" 
-            )
-        ));
-
     } else if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
         $sql = "DELETE FROM attends where attend_id='$attend_id'";
     } else {
