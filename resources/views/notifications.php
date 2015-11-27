@@ -3,9 +3,8 @@
 $url = 'https://api.parse.com/1/push';
 $data = array(
     'where' => '{}',
-    'type' => 'android',
     'data' => array(
-        'alert' => 'greetings programs',
+        'alert' => 'notifications are aswesome',
     ),
 );
 $_data = json_encode($data);
