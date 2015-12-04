@@ -9,17 +9,25 @@
         $sql = "SELECT * FROM users where id='$user_id'";
     } else {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $json = file_get_contents('php://input');
-            $json = json_decode($json, true);
-            $firstname = $json['firstname'];
-            $lastname = $json['lastname'];
-            $username = $json['username'];
-            $gender = $json['gender'];
-            $email = $json['email'];
-            $password = $json['password'];
-            $sql = "INSERT INTO users (firstname, lastname, username, gender, email, password) 
-                    VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password') 
-                    RETURNING id, firstname, lastname, username, gender, email, password";
+            if (isset($username)) {
+                $json = file_get_contents('php://input');
+                $json = json_decode($json, true);
+                $password = $json['password'];
+                $sql = "UPDATE users SET password='$password' WHERE username='$username' 
+                        RETURNING id, username, password";
+            } else {
+                $json = file_get_contents('php://input');
+                $json = json_decode($json, true);
+                $firstname = $json['firstname'];
+                $lastname = $json['lastname'];
+                $username = $json['username'];
+                $gender = $json['gender'];
+                $email = $json['email'];
+                $password = $json['password'];
+                $sql = "INSERT INTO users (firstname, lastname, username, gender, email, password) 
+                        VALUES ('$firstname', '$lastname', '$username', '$gender', '$email', '$password') 
+                        RETURNING id, firstname, lastname, username, gender, email, password";
+            }
         } else {
             $sql = "SELECT * from users";
         }

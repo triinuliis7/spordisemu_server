@@ -29,6 +29,10 @@ Route::post('/users', function () {
 	return view('users');
 });
 
+Route::post('/users/{username}/password', function ($username) {
+	return view('users')->with('username', $username);
+});
+
 Route::get('/users/{username}', function ($username) {	
 	return view('users')->with('username', $username);
 });
